@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Essentials Procurement</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Office Essentials Procurement</h1>
+            <p>Automated procurement for your office needs</p>
+        </header>
+
+        <main>
+            <!-- Customer Registration Form -->
+            <section id="customer-section" class="section">
+                <h2>Customer Information</h2>
+                <form id="customer-form">
+                    <div class="form-group">
+                        <label for="customer-name">Name *</label>
+                        <input type="text" id="customer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email">Email *</label>
+                        <input type="email" id="customer-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-company">Company</label>
+                        <input type="text" id="customer-company">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Phone</label>
+                        <input type="tel" id="customer-phone">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register Customer</button>
+                </form>
+                <div id="customer-result" class="result"></div>
+            </section>
+
+            <!-- Procurement Request Form -->
+            <section id="procurement-section" class="section">
+                <h2>Procurement Request</h2>
+                <form id="procurement-form">
+                    <div class="form-group">
+                        <label for="customer-id">Customer ID *</label>
+                        <input type="number" id="customer-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="items">Items (one per line) *</label>
+                        <textarea id="items" rows="5" placeholder="pens&#10;paper&#10;staplers" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget-limit">Budget Limit ($)</label>
+                        <input type="number" id="budget-limit" step="0.01" min="0">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </form>
+                <div id="procurement-result" class="result"></div>
+            </section>
+
+            <!-- Orders List -->
+            <section id="orders-section" class="section">
+                <h2>Orders</h2>
+                <div class="form-group">
+                    <label for="filter-customer-id">Filter by Customer ID</label>
+                    <input type="number" id="filter-customer-id">
+                    <button id="load-orders" class="btn btn-secondary">Load Orders</button>
+                </div>
+                <div id="orders-list" class="orders-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
